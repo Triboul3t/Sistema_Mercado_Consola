@@ -608,8 +608,9 @@ def sistemaTareas():
 def historialConversiones():
     if not conversiones:
         print("El historial esta vacio...")
-    for conversion, datos in conversiones.items():
-        print(f'\nID: {conversion} - Tipo: {datos["Tipo"]} - Detalle: {datos["Detalle"]}')
+        return
+    for i, datos in enumerate(conversiones, start=1):
+        print(f'\nID: {i} - Tipo: {datos["Tipo"]} - Detalle: {datos["Detalle"]}')
     
 
 # CONVERSOR DE PESO
@@ -662,8 +663,7 @@ def conversorDistancia():
             print("Opcion invalida")
             return
     print(f"\nResultado: {detalle}")
-    idConversion = len(conversiones) + 1
-    conversiones[idConversion] = {"Tipo": "Distancia", "Detalle": detalle} 
+    conversiones.append({"Tipo": "Peso", "Detalle": detalle})
     
 # CONVERSOR DE MONEDA
 def conversorMoneda():
@@ -692,8 +692,7 @@ def conversorMoneda():
             return
 
     print(f"\nResultado: {detalle}")
-    idConversion = len(conversiones) + 1
-    conversiones[idConversion] = {"Tipo": "Moneda", "Detalle": detalle}
+    conversiones.append({"Tipo": "Peso", "Detalle": detalle})
     
 # MENU CONVERSOR
 def sistemaConversion():
