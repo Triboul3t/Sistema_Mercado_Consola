@@ -28,7 +28,7 @@ reservas = {}
 tareas = {}
 
 #=====_CONVERSIONES_=====#
-conversiones = {}
+conversiones = []
 
 #=====_ASISTENCIAS_=====#
 asistencias = {}
@@ -63,7 +63,6 @@ def pedirOpcion(mensaje):
 #===========================================================================================================================================#
 
 #-----_SISTEMA ASISTENCIA_-----#
-
 
 # 1. MARCAR ASISTENCIA
 def marcarAsistencia():
@@ -637,8 +636,7 @@ def conversorPeso():
             print("Opcion invalida")
             return
     print(f"\nResultado: {detalle}")
-    idConversion = len(conversiones) + 1
-    conversiones[idConversion] = {"Tipo": "Peso", "Detalle": detalle}
+    conversiones.append({"Tipo": "Peso", "Detalle": detalle})
 
 # CONVERSOR DE DISTANCIA
 def conversorDistancia():
